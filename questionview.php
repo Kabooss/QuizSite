@@ -139,3 +139,28 @@
 </body>
 
 </html>
+
+
+-------------------------------------------
+//This is the function the ajax should be running.
+
+public function checkAnswer(){
+		
+		$ansid = array($_POST['answer']);
+		$qid = array($_POST['qid']);
+		//get answer id, and quid id.
+		$result = $this->quiz->score($qid, $aid);
+		
+		if($result === true){
+			if($result >=1){
+				echo "OK";
+				
+			}else{
+				echo "$result";
+			}
+			}else{
+				echo "failed";
+		}
+		
+	}	
+	 
